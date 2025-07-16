@@ -28,23 +28,12 @@ const socials = [
 ];
 ---
 
-<header
-  id="header"
-  class="flex justify-between items-center z-50 sticky pt-8 w-full"
+<footer
+  class="bg-[#335A83] font-sagace px-16 py-12 flex items-center justify-between"
 >
-  <a href="/" id="logo">
-    <img
-      src="/assets/logo-header.webp"
-      alt="logo"
-      class="w-auto h-12 object-contain"
-    />
-  </a>
-  <div id="menu" class="font-sagace space-x-10 text-xl text-[#335A83]">
-    <a href="">Inicio</a>
-    <a href="">Nosotros</a>
-    <a href="">Servicios</a>
-    <a href="">Acceso Clientes</a>
-    <a href="">Contáctenos</a>
+  <div class="space-y-4">
+    <img src="/assets/logo-footer.webp" alt="logo" class="w-auto h-10" />
+    <span class="text-[#B0DDFE] italic">¡Somos alquimistas digitales!</span>
   </div>
   <div id="socials" class="flex gap-6">
     {
@@ -52,11 +41,22 @@ const socials = [
         <a href="" id={social.id_social}>
           <img
             src={social.icon_social}
-            class="w-6 h-6"
+            class="w-10 h-10 bg-white"
             alt={social.alt_social}
           />
         </a>
       ))
     }
   </div>
-</header>
+  <div class="flex flex-col justify-end items-end">
+    <span class="font-medium text-white text-lg">Santa Anita - Lima, Perú</span>
+    <span class="text-[#B0DDFE] font-medium text-lg"
+      >987 826 182 - 966 761 455</span
+    >
+    <span class="mt-4 font-light text-white text-sm"
+      >GeekCorp©. Todos los derechos reservados {
+        new Date().getFullYear()
+      }</span
+    >
+  </div>
+</footer>

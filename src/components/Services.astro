@@ -1,0 +1,56 @@
+---
+const services = [
+  {
+    icon: "/icons/services/mobile.svg",
+    text: "Atención multicanal",
+    alt: "Atención multicanal",
+  },
+  {
+    icon: "/icons/services/telephone.svg",
+    text: "Gestión de cobranzas",
+    alt: "Gestión de cobranzas",
+  },
+  {
+    icon: "/icons/services/clip.svg",
+    text: "Agendamiento de citas",
+    alt: "Agendamiento de citas",
+  },
+  {
+    icon: "/icons/services/computer.svg",
+    text: "Soporte técnico remoto",
+    alt: "Soporte técnico remoto",
+  },
+  {
+    icon: "/icons/services/chart.svg",
+    text: "Procesamiento de datos",
+    alt: "Procesamiento de datos",
+  },
+  {
+    icon: "/icons/services/box.svg",
+    text: "Ventas y encuestas telefónicas",
+    alt: "Ventas y encuestas telefónicas",
+  },
+];
+---
+
+<section
+  id="services"
+  class="w-full h-full flex justify-center items-center relative bg-[#B0DDFE] flex-col text-[#335A83] font-sagace py-12 space-y-8 rounded-[60px]"
+>
+  <div class="flex justify-center flex-col items-center">
+    <h2 class="text-5xl font-black">SERVICIOS</h2>
+    <p class="text-3xl font-medium mt-4">
+      Nuestros servicios de Call Center & PBO
+    </p>
+  </div>
+  <div class="grid grid-cols-3 grid-rows-2 gap-4">
+    {
+      services.map((service) => (
+        <div class="flex gap-4 justify-center items-center bg-[#F8FBFF] px-10 py-3 rounded-full ">
+          <img src={service.icon} alt={service.alt} />
+          <span class="font-medium text-lg">{service.text}</span>
+        </div>
+      ))
+    }
+  </div>
+</section>
