@@ -2,47 +2,51 @@
 const socials = [
   {
     id_social: "instagram",
-    icon_social: "/icons/socials/instagram.svg",
+    icon_social: "/icons/socials/footer/instagram.svg",
     alt_social: "instagram",
+    href_social: "https://www.instagram.com/geekcorp.pe/",
   },
   {
     id_social: "whatsapp",
-    icon_social: "/icons/socials/whatsapp.svg",
+    icon_social: "/icons/socials/footer/whatsapp.svg",
     alt_social: "whatsapp",
+    href_social: "https://wa.me/51966761455",
   },
   {
     id_social: "telegram",
-    icon_social: "/icons/socials/telegram.svg",
+    icon_social: "/icons/socials/footer/telegram.svg",
     alt_social: "telegram",
+    href_social: "https://t.me/geekcorp_pe",
   },
   {
     id_social: "facebook",
-    icon_social: "/icons/socials/facebook.svg",
+    icon_social: "/icons/socials/footer/facebook.svg",
     alt_social: "facebook",
+    href_social: "https://www.facebook.com/geekcorp.pe/",
   },
   {
     id_social: "tiktok",
-    icon_social: "/icons/socials/tiktok.svg",
+    icon_social: "/icons/socials/footer/tiktok.svg",
     alt_social: "tiktok",
+    href_social: "https://www.tiktok.com/@geekcorp.pe",
   },
 ];
 ---
 
-<footer
-  class="bg-[#335A83] font-sagace px-16 py-12 flex items-center justify-between"
->
+<footer class="bg-deep-blue px-16 py-12 flex items-center justify-between">
   <div class="space-y-4">
     <img src="/assets/logo-footer.webp" alt="logo" class="w-auto h-10" />
-    <span class="text-[#B0DDFE] italic">¡Somos alquimistas digitales!</span>
+    <span class="text-sky italic">¡Somos alquimistas digitales!</span>
   </div>
   <div id="socials" class="flex gap-6">
     {
       socials.map((social) => (
-        <a href="" id={social.id_social}>
+        <a href={social.href_social} id={social.id_social}>
           <img
             src={social.icon_social}
-            class="w-10 h-10 bg-white"
+            class="w-8 h-8"
             alt={social.alt_social}
+            style="color: #FFFFFF"
           />
         </a>
       ))
@@ -50,9 +54,7 @@ const socials = [
   </div>
   <div class="flex flex-col justify-end items-end">
     <span class="font-medium text-white text-lg">Santa Anita - Lima, Perú</span>
-    <span class="text-[#B0DDFE] font-medium text-lg"
-      >987 826 182 - 966 761 455</span
-    >
+    <span class="text-sky font-medium text-lg">987 826 182 - 966 761 455</span>
     <span class="mt-4 font-light text-white text-sm"
       >GeekCorp©. Todos los derechos reservados {
         new Date().getFullYear()

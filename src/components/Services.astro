@@ -35,7 +35,7 @@ const services = [
 
 <section
   id="services"
-  class="w-full h-full flex justify-center items-center relative bg-[#B0DDFE] flex-col text-[#335A83] font-sagace py-12 space-y-8 rounded-[60px]"
+  class="w-full h-full flex justify-center items-center relative bg-sky flex-col text-deep-blue py-12 space-y-8 rounded-[60px]"
 >
   <div class="flex justify-center flex-col items-center">
     <h2 class="text-5xl font-black">SERVICIOS</h2>
@@ -46,7 +46,7 @@ const services = [
   <div class="grid grid-cols-3 grid-rows-2 gap-4">
     {
       services.map((service) => (
-        <div class="flex gap-4 justify-center items-center bg-[#F8FBFF] px-10 py-3 rounded-full ">
+        <div class="flex gap-4 justify-center items-center bg-light px-10 py-3 rounded-full hover:scale-105 transition-all duration-300">
           <img src={service.icon} alt={service.alt} />
           <span class="font-medium text-lg">{service.text}</span>
         </div>

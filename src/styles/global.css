@@ -71,6 +71,15 @@
   font-display: swap;
 }
 
-.font-sagace {
+* {
   font-family: "TRIALSagace", sans-serif;
+}
+
+@theme {
+  --color-primary: #151515;
+  --color-light: #F8FBFF;
+  --color-sky: #B0DDFE;
+  --color-ivory: #FFFBF6;
+  --color-deep-blue: #335A83;
+  --color-orange: #FF9800;
 }

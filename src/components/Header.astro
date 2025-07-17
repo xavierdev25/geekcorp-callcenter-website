@@ -2,28 +2,56 @@
 const socials = [
   {
     id_social: "instagram",
-    icon_social: "/icons/socials/instagram.svg",
+    icon_social: "/icons/socials/header/instagram.svg",
     alt_social: "instagram",
   },
   {
     id_social: "whatsapp",
-    icon_social: "/icons/socials/whatsapp.svg",
+    icon_social: "/icons/socials/header/whatsapp.svg",
     alt_social: "whatsapp",
   },
   {
     id_social: "telegram",
-    icon_social: "/icons/socials/telegram.svg",
+    icon_social: "/icons/socials/header/telegram.svg",
     alt_social: "telegram",
   },
   {
     id_social: "facebook",
-    icon_social: "/icons/socials/facebook.svg",
+    icon_social: "/icons/socials/header/facebook.svg",
     alt_social: "facebook",
   },
   {
     id_social: "tiktok",
-    icon_social: "/icons/socials/tiktok.svg",
+    icon_social: "/icons/socials/header/tiktok.svg",
     alt_social: "tiktok",
+  },
+];
+
+const clientAccessOptions = [
+  {
+    id: "portal",
+    label: "Soporte ticket",
+    href: "/portal-cliente",
+  },
+  {
+    id: "dashboard",
+    label: "Pagos",
+    href: "/dashboard",
+  },
+  {
+    id: "reports",
+    label: "Intranet",
+    href: "/reportes",
+  },
+  {
+    id: "support",
+    label: "Gestión Proyectos",
+    href: "/soporte",
+  },
+  {
+    id: "drive-cloud",
+    label: "Drive Cloud",
+    href: "/drive-cloud",
   },
 ];
 ---
@@ -39,12 +67,48 @@ const socials = [
       class="w-auto h-12 object-contain"
     />
   </a>
-  <div id="menu" class="font-sagace space-x-10 text-xl text-[#335A83]">
-    <a href="">Inicio</a>
-    <a href="">Nosotros</a>
-    <a href="">Servicios</a>
-    <a href="">Acceso Clientes</a>
-    <a href="">Contáctenos</a>
+  <div id="menu" class="space-x-10 text-xl text-deep-blue">
+    <a class="hover:text-orange transition-colors duration-200" href=""
+      >Inicio</a
+    >
+    <a class="hover:text-orange transition-colors duration-200" href=""
+      >Nosotros</a
+    >
+    <a class="hover:text-orange transition-colors duration-200" href=""
+      >Servicios</a
+    >
+    <div class="relative inline-block">
+      <button
+        id="client-access-btn"
+        class="hover:text-orange transition-colors duration-200 flex items-center gap-1"
+      >
+        Acceso Clientes
+        <img
+          id="dropdown-arrow"
+          src="/icons/chevron-down.svg"
+          alt="chevron-down"
+          class="w-6 h-6"
+        />
+      </button>
+      <div
+        id="client-access-dropdown"
+        class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible transition-all duration-200 transform -translate-y-2"
+      >
+        {
+          clientAccessOptions.map((option) => (
+            <a
+              href={option.href}
+              class="block px-4 py-3 text-sm text-deep-blue hover:bg-gray-50 hover:text-sky transition-colors duration-150 first:rounded-t-lg last:rounded-b-lg"
+            >
+              {option.label}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+    <a class="hover:text-orange transition-colors duration-200" href=""
+      >Contáctenos</a
+    >
   </div>
   <div id="socials" class="flex gap-6">
     {
@@ -54,9 +118,58 @@ const socials = [
             src={social.icon_social}
             class="w-6 h-6"
             alt={social.alt_social}
+            style="color: #335A83"
           />
         </a>
       ))
     }
   </div>
 </header>
+
+<style>
+  #client-access-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  #dropdown-arrow.rotate {
+    transform: rotate(180deg);
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdownBtn = document.getElementById("client-access-btn");
+    const dropdown = document.getElementById("client-access-dropdown");
+    const arrow = document.getElementById("dropdown-arrow");
+
+    if (!dropdownBtn || !dropdown || !arrow) {
+      console.error("No se pudieron encontrar los elementos del dropdown");
+      return;
+    }
+
+    dropdownBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      dropdown.classList.toggle("show");
+      arrow.classList.toggle("rotate");
+    });
+
+    // Cerrar dropdown al hacer clic fuera
+    document.addEventListener("click", function (e) {
+      const target = e.target as Node;
+      if (!dropdownBtn.contains(target) && !dropdown.contains(target)) {
+        dropdown.classList.remove("show");
+        arrow.classList.remove("rotate");
+      }
+    });
+
+    // Cerrar dropdown al presionar Escape
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        dropdown.classList.remove("show");
+        arrow.classList.remove("rotate");
+      }
+    });
+  });
+</script>
