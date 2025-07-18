@@ -1,13 +1,5 @@
-<section
-  class="w-full h-full flex justify-center items-center flex-col space-y-4"
->
-  <h2 class="text-5xl font-black text-deep-blue">FORMA PARTE DEL EQUIPO</h2>
-  <p class="text-2xl font-light text-deep-blue">
-    Únete a nuestro equipo de expertos y lleva tu talento al siguiente nivel.
-    ¡Envíanos tu CV!
-  </p>
-  <button
-    class="bg-deep-blue px-8 py-2 rounded-xl font-bold text-ivory text-xl hover:scale-105 transition-all duration-200 cursor-pointer"
-    >Unirse al equipo</button
-  >
-</section>
+---
+import IntegrationReact from "./IntegrationReact.jsx";
+---
+
+<IntegrationReact client:only="react" />

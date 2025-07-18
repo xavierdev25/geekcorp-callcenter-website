@@ -1,4 +1,8 @@
 ---
+import { getI18n } from "../i18n/index.js";
+import LangSwitcher from "./LangSwitcher.jsx";
+const lang = Astro.url.pathname.startsWith("/en") ? "en" : "es";
+const t = getI18n(lang);
 const socials = [
   {
     id_social: "instagram",
@@ -27,33 +31,19 @@ const socials = [
   },
 ];
 
-const clientAccessOptions = [
-  {
-    id: "portal",
-    label: "Soporte ticket",
-    href: "/portal-cliente",
-  },
-  {
-    id: "dashboard",
-    label: "Pagos",
-    href: "/dashboard",
-  },
-  {
-    id: "reports",
-    label: "Intranet",
-    href: "/reportes",
-  },
-  {
-    id: "support",
-    label: "Gestión Proyectos",
-    href: "/soporte",
-  },
-  {
-    id: "drive-cloud",
-    label: "Drive Cloud",
-    href: "/drive-cloud",
-  },
-];
+const clientAccessOptions = t.header.clientAccessOptions.map(
+  (label: string, idx: number) => ({
+    id: ["portal", "dashboard", "reports", "support", "drive-cloud"][idx],
+    label,
+    href: [
+      "/portal-cliente",
+      "/dashboard",
+      "/reportes",
+      "/soporte",
+      "/drive-cloud",
+    ][idx],
+  }),
+);
 ---
 
 <header
@@ -69,20 +59,20 @@ const clientAccessOptions = [
   </a>
   <div id="menu" class="space-x-10 text-xl text-deep-blue">
     <a class="hover:text-orange transition-colors duration-200" href=""
-      >Inicio</a
+      >{t.header.home}</a
     >
     <a class="hover:text-orange transition-colors duration-200" href=""
-      >Nosotros</a
+      >{t.header.about}</a
     >
     <a class="hover:text-orange transition-colors duration-200" href=""
-      >Servicios</a
+      >{t.header.services}</a
     >
     <div class="relative inline-block">
       <button
         id="client-access-btn"
         class="hover:text-orange transition-colors duration-200 flex items-center gap-1"
       >
-        Acceso Clientes
+        {t.header.clientAccess}
         <img
           id="dropdown-arrow"
           src="/icons/chevron-down.svg"
@@ -95,19 +85,21 @@ const clientAccessOptions = [
         class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible transition-all duration-200 transform -translate-y-2"
       >
         {
-          clientAccessOptions.map((option) => (
-            <a
-              href={option.href}
-              class="block px-4 py-3 text-sm text-deep-blue hover:bg-gray-50 hover:text-sky transition-colors duration-150 first:rounded-t-lg last:rounded-b-lg"
-            >
-              {option.label}
-            </a>
-          ))
+          clientAccessOptions.map(
+            (option: { id: string; label: string; href: string }) => (
+              <a
+                href={option.href}
+                class="block px-4 py-3 text-sm text-deep-blue hover:bg-gray-50 hover:text-orange transition-colors duration-150 first:rounded-t-lg last:rounded-b-lg"
+              >
+                {option.label}
+              </a>
+            ),
+          )
         }
       </div>
     </div>
     <a class="hover:text-orange transition-colors duration-200" href=""
-      >Contáctenos</a
+      >{t.header.contact}</a
     >
   </div>
   <div id="socials" class="flex gap-6">
@@ -124,6 +116,9 @@ const clientAccessOptions = [
       ))
     }
   </div>
+  <div class="relative inline-block text-deep-blue">
+    <LangSwitcher client:only="react" />
+  </div>
 </header>
 
 <style>
@@ -134,6 +129,14 @@ const clientAccessOptions = [
   }
 
   #dropdown-arrow.rotate {
+    transform: rotate(180deg);
+  }
+  #lang-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  #lang-dropdown-arrow.rotate {
     transform: rotate(180deg);
   }
 </style>
@@ -171,5 +174,31 @@ const clientAccessOptions = [
         arrow.classList.remove("rotate");
       }
     });
+
+    // Dropdown de idioma
+    const langBtn = document.getElementById("lang-select-btn");
+    const langDropdown = document.getElementById("lang-dropdown");
+    const langArrow = document.getElementById("lang-dropdown-arrow");
+
+    if (langBtn && langDropdown && langArrow) {
+      langBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        langDropdown.classList.toggle("show");
+        langArrow.classList.toggle("rotate");
+      });
+      document.addEventListener("click", function (e) {
+        const target = e.target as Node;
+        if (!langBtn.contains(target) && !langDropdown.contains(target)) {
+          langDropdown.classList.remove("show");
+          langArrow.classList.remove("rotate");
+        }
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          langDropdown.classList.remove("show");
+          langArrow.classList.remove("rotate");
+        }
+      });
+    }
   });
 </script>

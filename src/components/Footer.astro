@@ -1,4 +1,7 @@
 ---
+import { getI18n } from "../i18n/index.js";
+const lang = Astro.url.pathname.startsWith("/en") ? "en" : "es";
+const t = getI18n(lang);
 const socials = [
   {
     id_social: "instagram",
@@ -36,7 +39,7 @@ const socials = [
 <footer class="bg-deep-blue px-16 py-12 flex items-center justify-between">
   <div class="space-y-4">
     <img src="/assets/logo-footer.webp" alt="logo" class="w-auto h-10" />
-    <span class="text-sky italic">¡Somos alquimistas digitales!</span>
+    <span class="text-sky italic">{t.footer.slogan}</span>
   </div>
   <div id="socials" class="flex gap-6">
     {
@@ -53,12 +56,11 @@ const socials = [
     }
   </div>
   <div class="flex flex-col justify-end items-end">
-    <span class="font-medium text-white text-lg">Santa Anita - Lima, Perú</span>
-    <span class="text-sky font-medium text-lg">987 826 182 - 966 761 455</span>
-    <span class="mt-4 font-light text-white text-sm"
-      >GeekCorp©. Todos los derechos reservados {
-        new Date().getFullYear()
-      }</span
-    >
+    <span class="font-medium text-white text-lg">{t.footer.location}</span>
+    <span class="text-sky font-medium text-lg">{t.footer.phones}</span>
+    <span class="mt-4 font-light text-white text-sm">
+      {t.footer.copyright}
+      {new Date().getFullYear()}
+    </span>
   </div>
 </footer>
