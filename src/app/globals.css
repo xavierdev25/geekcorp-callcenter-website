@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "TRIALSagace";
+  src: url("/fonts/TRIALSagaceLight.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TRIALSagace";
+  src: url("/fonts/TRIALSagaceLightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TRIALSagace";
+  src: url("/fonts/TRIALSagaceRegular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TRIALSagace";
+  src: url("/fonts/TRIALSagaceRegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TRIALSagace";
+  src: url("/fonts/TRIALSagaceMedium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TRIALSagace";
+  src: url("/fonts/TRIALSagaceMediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TRIALSagace";
+  src: url("/fonts/TRIALSagaceBold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TRIALSagace";
+  src: url("/fonts/TRIALSagaceBoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TRIALSagace";
+  src: url("/fonts/TRIALSagaceBlack.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TRIALSagace";
+  src: url("/fonts/TRIALSagaceBlackItalic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+* {
+  font-family: "TRIALSagace", sans-serif;
+}
+
+@theme {
+  --color-primary: #151515;
+  --color-light: #f8fbff;
+  --color-sky: #b0ddfe;
+  --color-ivory: #fffbf6;
+  --color-deep-blue: #335a83;
+  --color-orange: #ff9800;
+}

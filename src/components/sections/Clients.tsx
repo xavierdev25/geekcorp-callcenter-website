@@ -1,0 +1,57 @@
+"use client";
+import Image from "next/image";
+import { getI18n } from "@/i18n/index";
+import { useLang } from "@/i18n/client";
+
+const Clients = () => {
+  const lang = useLang();
+  const t = getI18n(lang);
+  return (
+    <section
+      id="clients"
+      className="w-full h-full flex justify-center items-center flex-col space-y-8 mt-48"
+    >
+      <div className="flex items-center gap-14">
+        <Image
+          src="/decorations/star-services.svg"
+          alt="decoración estrella"
+          width={40}
+          height={40}
+          className="w-14"
+        />
+        <h1 className="text-5xl font-black text-deep-blue">
+          {t.clients.title}
+        </h1>
+        <Image
+          src="/decorations/star-services.svg"
+          alt="decoración estrella"
+          width={40}
+          height={40}
+          className="w-14 rotate-180"
+        />
+      </div>
+      <div className="flex gap-12">
+        <Image
+          src="/assets/client-1.webp"
+          alt="Client 1"
+          width={120}
+          height={60}
+        />
+        <Image
+          src="/assets/client-2.webp"
+          alt="Client 2"
+          width={120}
+          height={60}
+        />
+        <Image
+          src="/assets/client-3.webp"
+          alt="Client 3"
+          width={120}
+          height={60}
+        />
+      </div>
+    </section>
+  );
+};
+
+export default Clients;
