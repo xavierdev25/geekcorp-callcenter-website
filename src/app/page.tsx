@@ -11,8 +11,8 @@ import Contact from "@/components/sections/Contact";
 export default function Home() {
   return (
     <>
-      <main className="min-h-screen bg-ivory justify-center items-center">
-        <div className="px-64 mb-22">
+      <main className="min-h-screen bg-ivory justify-center items-center space-y-12">
+        <div className="px-8 md:px-64 md:mb-22">
           <Header />
           <Hero />
           <Services />

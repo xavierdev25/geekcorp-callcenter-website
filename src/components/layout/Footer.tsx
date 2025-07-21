@@ -41,8 +41,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-deep-blue px-16 py-12 flex items-center justify-between">
-      <div className="space-y-4">
+    <footer className="bg-deep-blue px-16 py-12 flex flex-col md:flex-row items-center justify-between">
+      <div className="space-y-4 flex flex-col md:flex-row items-center md:items-start">
         <Image
           src="/assets/logo-footer.webp"
           alt="logo"
@@ -52,7 +52,7 @@ const Footer = () => {
         />
         <span className="text-sky italic">{t.footer.slogan}</span>
       </div>
-      <div id="socials" className="flex gap-6">
+      <div id="socials" className="flex gap-6 mt-12 md:mt-0">
         {socials.map((social) => (
           <a
             key={social.id_social}
@@ -70,12 +70,12 @@ const Footer = () => {
           </a>
         ))}
       </div>
-      <div className="flex flex-col justify-end items-end">
-        <span className="font-medium text-white text-lg">
+      <div className="flex flex-col md:flex-row md:justify-end items-center md:items-end mt-12 md:mt-0">
+        <span className="font-medium text-white text-lg text-center md:text-left">
           {t.footer.location}
         </span>
         <span className="text-sky font-medium text-lg">{t.footer.phones}</span>
-        <span className="mt-4 font-light text-white text-sm">
+        <span className="mt-4 font-light text-white text-sm text-center md:text-left">
           {t.footer.copyright}
           {new Date().getFullYear()}
         </span>

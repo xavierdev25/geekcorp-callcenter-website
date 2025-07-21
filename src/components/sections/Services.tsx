@@ -26,20 +26,24 @@ const Services = () => {
             alt="decoración estrella"
             width={40}
             height={40}
-            className="w-14"
+            className="w-14 hidden md:block"
           />
-          <h2 className="text-5xl font-black">{t.services.title}</h2>
+          <h2 className="text-3xl md:text-5xl font-black">
+            {t.services.title}
+          </h2>
           <Image
             src="/decorations/star-services.svg"
             alt="decoración estrella"
             width={40}
             height={40}
-            className="w-14 rotate-180"
+            className="w-14 rotate-180 hidden md:block"
           />
         </div>
-        <p className="text-4xl font-medium mt-6">{t.services.subtitle}</p>
+        <p className="text-lg md:text-4xl text-center font-medium md:mt-6 mt-4">
+          {t.services.subtitle}
+        </p>
       </div>
-      <div className="grid grid-cols-3 grid-rows-2 gap-4">
+      <div className="grid md:grid-cols-3 md:grid-rows-2 gap-4 flex-col md:flex-row">
         {t.services.list.map((text, idx) => {
           const iconSrc = ICONS[idx];
           return (
@@ -51,12 +55,12 @@ const Services = () => {
                 <Image
                   src={iconSrc}
                   alt={text}
-                  className="w-7 h-7"
+                  className="w-5 h-5 md:w-7 md:h-7"
                   width={32}
                   height={32}
                 />
               )}
-              <span className="font-medium text-lg">{text}</span>
+              <span className="font-medium text-sm md:text-lg">{text}</span>
             </div>
           );
         })}

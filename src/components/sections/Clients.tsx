@@ -17,9 +17,9 @@ const Clients = () => {
           alt="decoración estrella"
           width={40}
           height={40}
-          className="w-14"
+          className="w-14 hidden md:block"
         />
-        <h1 className="text-5xl font-black text-deep-blue">
+        <h1 className="text-3xl md:text-5xl font-black text-deep-blue">
           {t.clients.title}
         </h1>
         <Image
@@ -27,10 +27,10 @@ const Clients = () => {
           alt="decoración estrella"
           width={40}
           height={40}
-          className="w-14 rotate-180"
+          className="w-14 rotate-180 hidden md:block "
         />
       </div>
-      <div className="flex gap-12">
+      <div className="flex gap-12 flex-col md:flex-row">
         <Image
           src="/assets/client-1.webp"
           alt="Client 1"
