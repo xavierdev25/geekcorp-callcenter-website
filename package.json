@@ -1,14 +1,54 @@
 {
-  "name": "geekcorp-callcenter-website",
-  "type": "module",
-  "version": "0.0.1",
+  "name": "geekcorp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sitio web corporativo de GeekCorp - Soluciones Tecnológicas Innovadoras",
+  "author": "GeekCorp Team",
+  "license": "MIT",
+  "packageManager": "pnpm@8.15.0",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "clean": "rm -rf .next out dist",
+    "clean:all": "rm -rf .next out dist node_modules pnpm-lock.yaml"
   },
   "dependencies": {
-    "astro": "^5.11.0"
-  }
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "next": "15.4.2"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.2",
+    "@eslint/eslintrc": "^3",
+    "prettier": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/geekcorp/website.git"
+  },
+  "keywords": [
+    "nextjs",
+    "typescript",
+    "tailwindcss",
+    "react",
+    "geekcorp",
+    "web-development"
+  ]
 }

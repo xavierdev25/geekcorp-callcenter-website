@@ -1,52 +1,101 @@
-# Astro Starter Kit: Basics
+# GeekCorp - Soluciones Tecnológicas Innovadoras
 
-```sh
-npm create astro@latest -- --template basics
+Este sitio web corporativo está construido con Next.js 15, TypeScript y Tailwind CSS 4.
+
+## 🚀 Características
+
+- **Multiidioma**: Soporte completo para español e inglés
+- **Diseño Responsivo**: Optimizado para todos los dispositivos
+- **Performance**: Construido con Next.js 15 y optimizaciones de rendimiento
+- **TypeScript**: Código completamente tipado para mayor seguridad
+- **Tailwind CSS 4**: Estilos modernos con la última versión de Tailwind
+
+## 🛠️ Tecnologías
+
+- **Framework**: Next.js 15.4.2
+- **Lenguaje**: TypeScript 5
+- **Estilos**: Tailwind CSS 4
+- **Gestión de Estado**: React Hooks
+- **Internacionalización**: Sistema personalizado i18n
+- **Gestor de Paquetes**: pnpm
+
+## 📦 Instalación
+
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/geekcorp/website.git
+cd geekcorp
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+2. Instala las dependencias:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```bash
+pnpm install
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+3. Ejecuta el servidor de desarrollo:
 
-## 🧞 Commands
+```bash
+pnpm dev
+```
 
-All commands are run from the root of the project, from a terminal:
+4. Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 📁 Estructura del Proyecto
 
-## 👀 Want to learn more?
+```
+src/
+├── app/                 # App Router de Next.js
+│   ├── layout.tsx      # Layout principal
+│   ├── page.tsx        # Página principal
+│   └── globals.css     # Estilos globales con Tailwind CSS 4
+├── components/         # Componentes React
+│   ├── layout/         # Componentes de layout (Header, Footer)
+│   ├── sections/       # Secciones de la página
+│   └── ui/            # Componentes de UI reutilizables
+├── constants/         # Constantes y configuraciones
+├── types/            # Definiciones de tipos TypeScript
+└── i18n/             # Archivos de internacionalización
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 🔧 Scripts Disponibles
+
+- `pnpm dev` - Ejecuta el servidor de desarrollo
+- `pnpm build` - Construye la aplicación para producción
+- `pnpm start` - Inicia el servidor de producción
+- `pnpm lint` - Ejecuta el linter
+- `pnpm lint:fix` - Corrige errores de linting automáticamente
+- `pnpm type-check` - Verifica tipos de TypeScript
+- `pnpm format` - Formatea el código con Prettier
+- `pnpm clean` - Limpia archivos de build
+- `pnpm clean:all` - Limpia todo incluyendo node_modules
+
+## 🌐 Internacionalización
+
+El proyecto soporta múltiples idiomas a través de un sistema personalizado:
+
+- Los archivos de traducción se encuentran en `src/i18n/`
+- Soporte para español (es) e inglés (en)
+- Cambio de idioma persistente en localStorage
+
+## 🎨 Personalización
+
+### Colores (Tailwind CSS 4)
+
+Los colores principales están definidos en `src/app/globals.css` usando CSS custom properties:
+
+- `--color-deep-blue`: #335A83
+- `--color-orange`: #FF9800
+- `--color-ivory`: #FFFBF6
+- `--color-light-gray`: #E8E8E8
+- `--color-dark-gray`: #2C2C2C
+
+### Componentes
+
+Los componentes están organizados en carpetas por funcionalidad:
+
+- `layout/`: Componentes de estructura (Header, Footer)
+- `sections/`: Secciones de contenido (About, Services, etc.)
+
+---
