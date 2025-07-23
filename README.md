@@ -1,6 +1,6 @@
 # GeekCorp - Soluciones Tecnológicas Innovadoras
 
-GeekCorp es una empresa de desarrollo de software que ofrece soluciones tecnológicas personalizadas para empresas. Nuestro sitio web corporativo está construido con Next.js 15, TypeScript y Tailwind CSS 4.
+Este sitio web corporativo está construido con Next.js 15, TypeScript y Tailwind CSS 4.
 
 ## 🚀 Características
 
@@ -22,17 +22,20 @@ GeekCorp es una empresa de desarrollo de software que ofrece soluciones tecnoló
 ## 📦 Instalación
 
 1. Clona el repositorio:
+
 ```bash
 git clone https://github.com/geekcorp/website.git
 cd geekcorp
 ```
 
 2. Instala las dependencias:
+
 ```bash
 pnpm install
 ```
 
 3. Ejecuta el servidor de desarrollo:
+
 ```bash
 pnpm dev
 ```
@@ -79,7 +82,9 @@ El proyecto soporta múltiples idiomas a través de un sistema personalizado:
 ## 🎨 Personalización
 
 ### Colores (Tailwind CSS 4)
+
 Los colores principales están definidos en `src/app/globals.css` usando CSS custom properties:
+
 - `--color-deep-blue`: #335A83
 - `--color-orange`: #FF9800
 - `--color-ivory`: #FFFBF6
@@ -87,41 +92,10 @@ Los colores principales están definidos en `src/app/globals.css` usando CSS cus
 - `--color-dark-gray`: #2C2C2C
 
 ### Componentes
+
 Los componentes están organizados en carpetas por funcionalidad:
+
 - `layout/`: Componentes de estructura (Header, Footer)
 - `sections/`: Secciones de contenido (About, Services, etc.)
-- `ui/`: Componentes reutilizables
-
-## 🐳 Docker
-
-### Desarrollo
-```bash
-docker-compose --profile dev up
-```
-
-### Producción
-```bash
-docker-compose up
-```
-
-## 📝 Contribución
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
-
-## 📞 Contacto
-
-- **Email**: info@geekcorp.com
-- **Teléfono**: +1 (555) 123-4567
-- **Sitio Web**: https://geekcorp.com
 
 ---
-
-Desarrollado con ❤️ por el equipo de GeekCorp
