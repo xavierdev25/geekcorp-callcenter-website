@@ -180,7 +180,7 @@ const Header = () => {
         >
           {/* Botón X para cerrar el menú */}
           <button
-            className="absolute top-4 right-4 text-3xl text-deep-blue focus:outline-none"
+            className="absolute top-4 right-4 text-4xl text-deep-blue focus:outline-none"
             onClick={() => setMobileMenuOpen(false)}
             aria-label="Cerrar menú"
           >
