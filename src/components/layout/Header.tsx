@@ -54,7 +54,6 @@ const Header = () => {
       ) {
         setClientAccessOpen(false);
       }
-      // Cerrar menú móvil si se hace click fuera
       if (
         mobileMenu &&
         mobileMenuBtn &&
@@ -92,14 +91,14 @@ const Header = () => {
           alt="logo"
           width={120}
           height={48}
-          className="w-auto h-12 object-contain"
+          className="w-auto h-12 lg:h-10 object-contain"
           priority
         />
       </a>
       {/* Botón hamburguesa solo en móviles */}
       <button
         id="mobile-menu-btn"
-        className="md:hidden flex flex-col justify-center items-center w-10 h-10 ml-2 focus:outline-none"
+        className="lg:hidden flex flex-col justify-center items-center w-10 h-10 ml-2 focus:outline-none"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         aria-label="Abrir menú"
       >
@@ -116,7 +115,7 @@ const Header = () => {
       {/* Menú principal: oculto en móviles, visible en md+ */}
       <div
         id="menu"
-        className="space-x-10 text-xl text-deep-blue hidden md:flex"
+        className="space-x-10 text-xl  text-deep-blue hidden lg:flex"
       >
         <a className="hover:text-orange transition-colors duration-300" href="">
           {t.header.home}
@@ -174,7 +173,7 @@ const Header = () => {
       {/* Menú móvil: visible solo en móviles */}
       <div
         id="mobile-menu"
-        className={`fixed inset-0 z-40 bg-black bg-opacity-40 md:hidden transition-all duration-300 ${mobileMenuOpen ? "block" : "hidden"}`}
+        className={`fixed inset-0 z-40 bg-black bg-opacity-40 lg:hidden transition-all duration-300 ${mobileMenuOpen ? "block" : "hidden"}`}
       >
         <nav
           className={`absolute top-0 right-0 w-64 h-full bg-white shadow-lg flex flex-col pt-24 px-8 space-y-6 text-lg text-deep-blue transition-transform duration-300 ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
@@ -272,7 +271,7 @@ const Header = () => {
         </nav>
       </div>
       {/* Redes sociales y selector de idioma: ocultos en móviles, visibles en md+ */}
-      <div id="socials" className="hidden md:flex gap-6">
+      <div id="socials" className="hidden xl:flex gap-6">
         {SOCIAL_MEDIA.map((social) => (
           <a
             key={social.id_social}
@@ -290,7 +289,7 @@ const Header = () => {
           </a>
         ))}
       </div>
-      <div className="relative inline-block text-deep-blue hidden md:block">
+      <div className="relative inline-block text-deep-blue hidden lg:block">
         <LangSwitcher />
       </div>
     </header>

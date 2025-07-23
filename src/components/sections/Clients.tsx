@@ -11,7 +11,7 @@ const Clients = () => {
       id="clients"
       className="w-full h-full flex justify-center items-center flex-col space-y-8 mt-48"
     >
-      <div className="flex items-center gap-14">
+      <div className="flex items-center gap-14 md:gap-8">
         <Image
           src="/decorations/star-services.svg"
           alt="decoración estrella"
@@ -19,7 +19,7 @@ const Clients = () => {
           height={40}
           className="w-14 hidden md:block"
         />
-        <h1 className="text-3xl md:text-5xl font-black text-deep-blue">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-deep-blue">
           {t.clients.title}
         </h1>
         <Image
@@ -30,7 +30,7 @@ const Clients = () => {
           className="w-14 rotate-180 hidden md:block "
         />
       </div>
-      <div className="flex gap-12 flex-col md:flex-row">
+      <div className="flex gap-12 flex-col md:flex-row justify-center items-center">
         <Image
           src="/assets/client-1.webp"
           alt="Client 1"
